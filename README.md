@@ -24,3 +24,5 @@ Uma aplicação web moderna e elegante para gerenciamento de tarefas diárias, d
 4. Use "Remover" para excluir tarefas individuais
 
 Ideal para organização pessoal e produtividade no dia a dia.
+
+Link do deploy: https://larazquad.github.io/To-Do-List-ascii/
