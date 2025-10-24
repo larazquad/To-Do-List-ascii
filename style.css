@@ -1,0 +1,258 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{ 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.container{ 
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+h2{
+    text-align: center;
+    margin-bottom: 25px;
+    color: #c36fff;
+    font-size: 1.8rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
+
+.input-container{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+@media (min-width: 768px){
+    .input-container{
+        flex-direction: row;
+    }
+}
+
+#taskInput{
+    flex: 1;
+    padding: 15px;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+#taskInput:focus{
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+button{
+    padding: 15px 25px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+button:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+ul{ 
+    list-style: none; 
+}
+
+li{ 
+    padding: 18px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    background: #f8f9fa;
+}
+
+li:hover{
+    background: #e9ecef;
+    transform: translateX(5px);
+}
+
+li:last-child{
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.task-text{
+    flex: 1;
+    word-break: break-word;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+.task-text:hover{
+    background: rgba(102, 126, 234, 0.1);
+}
+
+.completed{ 
+    text-decoration: line-through; 
+    color: #6c757d;
+    background: #e9ecef !important;
+}
+
+.completed .task-text{
+    opacity: 0.7;
+}
+
+.remove-btn{
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+    padding: 10px 18px;
+    font-size: 14px;
+    white-space: nowrap;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.remove-btn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+.task-actions{
+    display: flex;
+    gap: 10px;
+}
+
+.empty-state{
+    text-align: center;
+    color: #6c757d;
+    padding: 40px 20px;
+    font-style: italic;
+}
+
+.stats{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #495057;
+}
+
+@media (max-width: 480px){
+    body{
+        padding: 10px;
+    }
+    
+    .container{
+        padding: 20px 15px;
+        margin: 5px;
+        border-radius: 10px;
+    }
+    
+    h2{
+        font-size: 1.5rem;
+    }
+    
+    #taskInput, button{
+        padding: 12px;
+        font-size: 14px;
+    }
+    
+    li{
+        padding: 15px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    
+    .task-actions{
+        align-self: stretch;
+        justify-content: space-between;
+    }
+    
+    .remove-btn{
+        flex: 1;
+        text-align: center;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px){
+    .container{
+        max-width: 90%;
+        margin: 20px auto;
+    }
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+li{
+    animation: fadeIn 0.3s ease;
+}
+
+@media (prefers-color-scheme: dark){
+    body{
+        background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    }
+    
+    .container{
+        background: #2d3748;
+        color: #e2e8f0;
+    }
+    
+    #taskInput{
+        background: #4a5568;
+        border-color: #718096;
+        color: #e2e8f0;
+    }
+    
+    #taskInput::placeholder{
+        color: #a0aec0;
+    }
+    
+    li{
+        background: #4a5568;
+        color: #e2e8f0;
+    }
+    
+    li:hover{
+        background: #718096;
+    }
+    
+    .completed{
+        background: #718096 !important;
+        color: #a0aec0;
+    }
+}
